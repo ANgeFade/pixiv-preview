@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "Pixiv 原图预览增强",
+  "version": "1.0.0",
+  "description": "在Pixiv上查看原图预览，鼠标悬停即可显示高清大图",
+  "permissions": [
+    "webRequest",
+    "storage",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "https://www.pixiv.net/*",
+    "https://i.pximg.net/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.pixiv.net/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "*"
+      ],
+      "matches": [
+        "https://www.pixiv.net/*"
+      ]
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "pixiv_referer_rules",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
