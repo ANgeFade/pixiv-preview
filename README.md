@@ -25,7 +25,7 @@
 
 3. **加载扩展**
    - 点击"加载已解压的扩展程序"
-   - 选择 `f:\code_program\pixiv-preview\extension` 文件夹
+   - 选择 `extension` 文件夹
    - 点击"选择文件夹"
 
 4. **完成！**
@@ -143,3 +143,4 @@ MIT License
 ---
 
 **享受高清预览吧！** 🎨✨
+
